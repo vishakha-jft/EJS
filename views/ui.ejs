@@ -1,0 +1,40 @@
+<html>
+    <head>     
+    </head>
+    <body>
+        <div align="center">
+        <form   method="post" action=  <%= edit=== false ? "/employees/add" :`/employee/update/${edit.id}` %>>
+        <label>Name</label>
+        <input type="text" id="name" name="name" value=<%= edit === false ? "" :`${edit.name}` %>  ><br><br>
+        <label>Job</label>
+        <input type="text" id="job" name="job"   value=<%= edit === false ? "" :`${edit.job}`  %>><br><br>
+        <label>Salary</label>
+        <input type="number" id="sal" name="salary"   value=<%= edit === false ? "" :`${edit.salary}` %>><br><br>
+        <br>
+        <input id="add" type="submit" value=<%= edit=== false ? "Add" : "Update" %>>
+        </form>
+        <br><br><br>
+        <table border='1|1' ><tr><th>Name</th><th>Job</th><th>Salary</th><th> Action </th>
+        <tbody id="box">
+            <% for(let i=0;i < dbs.length;i++){ %>
+                <tr>
+                    <td><%= dbs[i].name %> </td>
+                    <td><%= dbs[i].job %> </td>
+                    <td><%= dbs[i].salary %> </td>
+                    <td>
+                        <form action="/employee/<%= dbs[i].id %>" method="get">
+                            <input type="submit" value="Edit">
+                        </form>
+                        <form action="/employee/delete/<%= dbs[i].id %>" method="post">
+                            <input type="submit" value="delete">
+                        </form>
+                    </td>
+                </tr>
+            <% } %>    
+        </tbody>
+        </tr></table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>          
+    </body>
+</html>

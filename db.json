@@ -1,0 +1,26 @@
+[
+    {
+        "id": "4",
+        "name": "areena",
+        "job": "Artist",
+        "salary": "100000"
+    },
+    {
+        "id": "3",
+        "name": "latika verma",
+        "job": "gammer",
+        "salary": "12345678"
+    },
+    {
+        "id": 6,
+        "name": "kushal",
+        "job": "SDE",
+        "salary": "100000"
+    },
+    {
+        "id": 5,
+        "name": "shakshi",
+        "job": "programmer",
+        "salary": "12345"
+    }
+]
